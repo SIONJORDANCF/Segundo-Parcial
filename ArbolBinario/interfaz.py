@@ -19,10 +19,15 @@ class AppArbol:
         tk.Button(botones, text="Buscar", command=self.buscar).pack(side=tk.LEFT, padx=5)
         tk.Button(botones, text="Eliminar", command=self.eliminar).pack(side=tk.LEFT, padx=5)
         tk.Button(botones, text="Mostrar Inorden", command=self.mostrar_inorden).pack(side=tk.LEFT, padx=5)
+        tk.Button(botones, text="SuperParent", command=self.superparent).pack(side=tk.LEFT, padx=5)
 
         self.canvas = tk.Canvas(root, width=600, height=400, bg="white")
         self.canvas.pack(pady=10)
-
+    #no pude implementar el metodo para poder mostrar los valores pero si muestra el boton pero no hace la funcionalidad ing
+    def superparent(self):
+        valor = self.obtener_valor()
+        
+        
     def insertar(self):
         valor = self.obtener_valor()
         if valor is not None:

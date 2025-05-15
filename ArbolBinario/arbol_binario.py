@@ -31,7 +31,24 @@ class ArbolBinario:
             else:
                 return _buscar(nodo.derecha, valor)
         return _buscar(self.raiz, valor)
-
+    #implementado
+    def superparent(self, x, z):
+        if not self.buscar(x) or not self.buscar(z):
+            return False
+        if x == z:
+            return False
+        
+        def _superparent(nodo, x, z):
+            if nodo is None:
+                return False
+            if nodo.valor == x:
+                return self._contiene(nodo, z)
+            elif x < nodo.valor:
+                return _superparent(nodo.izquierda, x, z)
+            else:
+                return _superparent(nodo.derecha, x, z)
+        return _superparent(self.raiz, x, z)
+    
     def eliminar(self, valor):
         def _eliminar(nodo, valor):
             if nodo is None:
