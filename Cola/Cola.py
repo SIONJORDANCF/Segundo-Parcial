@@ -41,6 +41,19 @@ class Cola:
 
     def obtener_longitud(self):
         return self.longitud
+    #def minimo() implementado 
+    def minimo(self):
+        if self.esta_vacia():
+            print("Error: Cola vacía")
+            return None
+
+        actual = self.frente
+        minimo_valor = actual.valor
+        while actual:
+            if actual.valor < minimo_valor:
+                minimo_valor = actual.valor
+            actual = actual.siguiente
+        return minimo_valor
 
     def mostrar_cola(self):
         print("\nEstado actual de la cola:")
